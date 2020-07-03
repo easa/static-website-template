@@ -7,6 +7,7 @@
 There's also a github action is set to help you just focous on weblog content and less worry about the template!
 
 ## notice
+Names of files should be lowercase
 VERY CASE SENSITIVE
 * file names
 * variables names
