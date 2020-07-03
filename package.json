@@ -7,10 +7,10 @@
     "create": "sp-create",
     "build": "sp-build"
   },
-  "keywords": [],
+  "keywords": ["static site", "weblog", "haml", "pug"],
   "author": "easa",
   "license": "ISC",
   "dependencies": {
-    "staticpug": "^0.2.3"
+    "staticpug": "^0.2.5"
   }
 }
