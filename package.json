@@ -16,6 +16,6 @@
   "author": "easa",
   "license": "ISC",
   "dependencies": {
-    "staticpug": "^0.2.8"
+    "staticpug": "^0.2.9"
   }
 }
