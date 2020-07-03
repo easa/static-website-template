@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="Blog" content="Blog"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="description"><meta name="keywords"><meta name="author" content="Easa"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"><link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet"><link href="asset/style.css" rel="stylesheet"><link rel="stylesheet" href="../assets/css/main.css"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css"></head></html><body><div class="container"><header class="blog-header py-3"><div class="nav-scroller py-1 mb-2"><nav class="nav d-flex justify-content-between"></nav><a class="p-2 text-muted" href="../">Home Page</a><a class="p-2 text-muted" href="index.html">Blog Posts</a><a class="p-2 text-muted" href="https://github.com/easa/staticpug/issues/new">Add New Issue</a></div></header></div><main class="container" role="main"><div class="row"><div class="col-md-8 blog-main border-bottom"><h3 class="pb-3 mb-4 font-italic border-bottom"></h3><img alt="undefined header image"><div class="blog-post border-bottom"><h1 id="intro-to-the-staticpug">Intro to the staticpug</h1>
+<blockquote>
+<p>Welcome to this beautiful <em>static</em> website of yours</p>
+</blockquote>
+<p>If you see this page it means you have executed the <code>npx sp-init</code> command and the files are generated, 
+then you executed the <code>npx sp-build</code> command and the html files generated from templates 
+and you opened the website using any static website viewer.</p>
+<p>In case you need to use inner functions in your code: </p>
+<pre><code class="language-js">// It&#39;s possible to use individual functions of this package :)
+const { renderHTMLs, copyStatics } = require(&#39;staticpug&#39;)
+
+renderHTMLs(sourceDirectory, destinationDirectory).then(result=&gt;{
+  console.log(result)
+})
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>functionality</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>copy files recursively</td>
+<td>gets two directory as parameters, copy everything in first directory to second directory</td>
+</tr>
+<tr>
+<td>generate htmls</td>
+<td>read pug files, related markdown-folder, related json file and polar file that is the index of markdown-folder and generate html</td>
+</tr>
+</tbody></table>
+<p>Tank you for using this package, don&#39;t hesitate to contribute</p>
+<p>Powered by <a href="https://pugjs.org/">pugjs</a>, <a href="https://marked.js.org/">markedjs</a> (to work), 
+also used the beautiful <a href="https://getbootstrap.com/">bootstrap</a> 
+<a href="http://jquery.com/">jQuery</a> that cames beside the bootstrap!</p>
+<p>Developed by <a href="https://github.com/easa">easa</a></p>
+</div><span class="badge badge-info"></span>&nbsp;<div class="author"><small class="pb-3 mb-4 font-italic">Published on  by  </small><img class="profile-image" alt="author's image" style="border-radius: 50%;"></div></div></div></main><footer class="blog-footer text-center"><p>Powered by <a href="https://npmjs.com/package/staticpug">staticpug </a>developed by  <a href="https://github.com/easa">Easa</a></p></footer><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script><script src="../assets/js/main.js"></script></body>
