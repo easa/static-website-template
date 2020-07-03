@@ -24,7 +24,7 @@ append body
         .blog-post.border-bottom!= article.content 
         //- != to unscape the html code in article.content
 
-        each tag in article.keywords 
+        each tag in article.keywords ?  article.keywords : ['']
           span.badge.badge-info= tag 
           | &nbsp;
         .author

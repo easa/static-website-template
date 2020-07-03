@@ -6,6 +6,12 @@
 
 There's also a github action is set to help you just focous on weblog content and less worry about the template!
 
+## notice
+VERY CASE SENSITIVE
+* file names
+* variables names
+* everything 
+
 ## step by step
 
 > There's no need to do these steps, because it's a template to work with github static pages,
