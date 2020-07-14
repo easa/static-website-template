@@ -19,20 +19,20 @@ append body
   main.container(role='main')
     .row
       .col-md-8.blog-main.border-bottom
-        h3.pb-3.mb-4.font-italic.border-bottom #{article.title}
+        h3.text-info.pb-3.mb-4.font-italic.border-bottom #{article.title}
         img(src=article.titleImage, alt=article.title+' header image')
         .blog-post.border-bottom!= article.content 
         //- != to unscape the html code in article.content
-
-        each tag in article.keywords ?  article.keywords : ['']
-          span.badge.badge-info= tag 
-          | &nbsp;
-        .author
+        p.tags
+          each tag in article.keywords ?  article.keywords : ['']
+            span.badge.badge-info= tag 
+            | &nbsp;
+        p.author
           small.pb-3.mb-4.font-italic Published on #{article.date} by #{article.author} 
-          img.profile-image(src=article.authorImage, alt="author's image" style="border-radius: 50%;")
+          //- img.profile-image(src=article.authorImage, alt="author's image" style="border-radius: 50%;")
 
 append style
-  link(rel="stylesheet" href="../assets/css/main.css")
+  link(rel='stylesheet' href='../assets/css/main.css')
   link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css')
 append script
   script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js')

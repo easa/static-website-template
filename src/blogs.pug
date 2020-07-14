@@ -1,5 +1,10 @@
 extends /../component/layout/default
 
+append script
+  script(src='../assets/js/main.js')
+append style
+  link(href='../asset/css/style.css', rel='stylesheet')
+
 append body
   -
     var headerContent = [
@@ -14,16 +19,20 @@ append body
     .row
       each article in listOfArticles
         .pb-3.col-md-8.blog-main.border-bottom
-          img(src=article.titleImage, alt=article.title+' header image', style="height: 200px;")
+          .image
+            img(src=article.titleImage, alt=article.title+' header image' style="max-width:100%;border-bottom-left-radius:20px;")
+
+          small.font-italic(style="position:relative") published on 
+            span.font-italic #{article.date} by #{article.author} 
+            img.profile-image(src=article.authorImage, alt="author's image" style="border-radius:50%;position:absolute;top:-44px;left:0") 
+
           a(href=article.articleLink+'.html')
             h3= article.articleName
-          .title= article.title
-          .subtitle= article.subtitle 
-          small.font-italic published on 
-            span.font-italic #{article.date} by #{article.author} 
-            img.profile-image(src=article.authorImage, alt="author's image", style="border-radius: 50%;") 
-          div
+          h6.title= article.title
+          p.subtitle= article.subtitle
+          p.tags
             each tag in article.keywords ? article.keywords : ['']
               span.badge.badge-info= tag 
               | &nbsp;
-          a(href=article.articleLink) Read more...
+          p.readmore
+            a(href=article.articleLink) Read more...

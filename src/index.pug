@@ -1,5 +1,10 @@
 extends /../component/layout/default
 
+append script
+  script(src='assets/js/main.js')
+append style
+  link(href='asset/css/style.css' rel='stylesheet')
+
 append body
   -
     var headerContent = [
@@ -14,7 +19,7 @@ append body
         a.p-2.text-dark(href=item.link)= item.title
 
     a.btn.btn-outline-primary(href='#') Sign up
-  
+
   .container
     .pricing-header.px-3.py-3.pt-md-5.pb-md-4.mx-auto.text-center
       h1.display-4 Pricing
@@ -28,46 +33,29 @@ append body
       .card-deck.mb-3.text-center
         each card in cards 
           include /../component/card.pug
-        
+
     footer.pt-4.my-md-5.pt-md-5.border-top
+      -
+        var footerItems = [{
+          title:'Features',
+          items: ['Cool stuff','Random feature','Team feature','Stuff for developers','Another one','Last time']
+        },{
+          title: 'Resources',
+          items: ['Resource','Resource name','Another resource','Final resource']
+        },{
+          title: 'About',
+          items: ['Team','Locations','Privacy','Terms']
+        }];
+
       .row
         .col-12.col-md
-          img.mb-2(src='https://getbootstrap.com/assets/brand/bootstrap-solid.svg', alt='', width='24', height='24')
+          img.mb-2(src='https://getbootstrap.com/assets/brand/bootstrap-solid.svg' alt='' width='24' height='24')
           small.d-block.mb-3.text-muted © #{year}
-        .col-6.col-md
-          h5 Features
-          ul.list-unstyled.text-small
-            li
-              a.text-muted(href='#') Cool stuff
-            li
-              a.text-muted(href='#') Random feature
-            li
-              a.text-muted(href='#') Team feature
-            li
-              a.text-muted(href='#') Stuff for developers
-            li
-              a.text-muted(href='#') Another one
-            li
-              a.text-muted(href='#') Last time
-        .col-6.col-md
-          h5 Resources
-          ul.list-unstyled.text-small
-            li
-              a.text-muted(href='#') Resource
-            li
-              a.text-muted(href='#') Resource name
-            li
-              a.text-muted(href='#') Another resource
-            li
-              a.text-muted(href='#') Final resource
-        .col-6.col-md
-          h5 About
-          ul.list-unstyled.text-small
-            li
-              a.text-muted(href='#') Team
-            li
-              a.text-muted(href='#') Locations
-            li
-              a.text-muted(href='#') Privacy
-            li
-              a.text-muted(href='#') Terms
+
+        each foot in footerItems
+          .col-6.col-md
+            h5= foot.title
+              ul.list-unstyled.text-small
+                each item in foot.items
+                  li
+                    a.text-muted(href='#')= item
